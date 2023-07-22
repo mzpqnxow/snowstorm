@@ -9,6 +9,9 @@ readme = "README.md"
 description = "A minimalistic encryption protocol based on Noise protocol (snow)"
 categories = ["Cryptography"]
 
+[target.'cfg(target_arch = "mips")'.dependencies]
+portable-atomic = "1"
+
 [dependencies]
 snow = "0.9"
 thiserror = "1"
