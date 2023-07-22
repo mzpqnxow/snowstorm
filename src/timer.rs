@@ -1,6 +1,13 @@
+#[cfg(target_arch = "mips")]
+use portable_atomic::AtomicU64;
+
+
+#[cfg(not(target_arch = "mips"))]
+use core::sync::atomic::AtomicU64;
+
 use std::{
     sync::{
-        atomic::{AtomicU64, Ordering},
+        atomic::{Ordering},
         Once,
     },
     thread,
